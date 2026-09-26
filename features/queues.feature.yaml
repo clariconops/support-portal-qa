@@ -20,6 +20,12 @@ behaviours:
     testName: queues.create.retrieve.delete
     severity: P0
     layers: [api]
+  - id: queues.assignment.round_robin.available_members
+    description: Available agents in an explicitly configured queue receive tickets in round-robin order
+    spec: specs/queues/roundRobin.assignment.spec.ts
+    testName: queues.assignment.round_robin.available_members
+    severity: P0
+    layers: [api]
 data:
   seeds: [tenant, users]
   cleanup: true
