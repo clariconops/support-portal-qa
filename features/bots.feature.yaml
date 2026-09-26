@@ -5,7 +5,7 @@ owner: support-core@company.com
 severity: P1
 tags: [smoke, regression, api]
 dependsOn: [auth]
-layers: [api]
+layers: [api, ui]
 environments: [local, ci, staging]
 behaviours:
   - id: bots.list.loads
@@ -26,6 +26,12 @@ behaviours:
     testName: bots.workflow.send_collect_end.real_ticket
     severity: P0
     layers: [api]
+  - id: bots.ui.create.builder.step_options
+    description: An administrator creates a bot through the UI and sees every supported workflow step
+    spec: specs/bots/bots.ui.spec.ts
+    testName: UI bot create opens the visual builder with every step option
+    severity: P1
+    layers: [ui]
 data:
   seeds: [tenant, users]
   cleanup: true
