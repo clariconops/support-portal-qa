@@ -3,12 +3,24 @@ title: Automation Engine (golden flows & invariants)
 group: automation
 owner: qa-team@company.com
 severity: P0
-tags: [automation, regression, api]
+tags: [automation, regression, api, ui]
 dependsOn: [auth]
-layers: [api]
+layers: [api, ui]
 environments: [local, ci, staging]
 
 behaviours:
+  - id: automation.ui.supported_controls
+    description: The automation editor exposes every supported trigger and action type
+    spec: specs/automation/automation.ui.spec.ts
+    testName: UI automation builder exposes every supported trigger and action
+    severity: P1
+    layers: [ui]
+  - id: automation.ui.create_valid_rule
+    description: An administrator can create a valid automation rule through the UI
+    spec: specs/automation/automation.ui.spec.ts
+    testName: UI automation builder creates a valid rule
+    severity: P1
+    layers: [ui]
   - id: automation.flows.seed
     description: Harness seeds a probe rule for dry-run cases
     spec: specs/automation/automation.flows.spec.ts

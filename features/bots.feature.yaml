@@ -32,6 +32,12 @@ behaviours:
     testName: UI bot create opens the visual builder with every step option
     severity: P1
     layers: [ui]
+  - id: bots.ui.complete_flow.rendered
+    description: A UI-created bot renders every supported persisted conversation step in the visual builder
+    spec: specs/bots/bots.ui.spec.ts
+    testName: UI bot builder renders a complete persisted conversation flow
+    severity: P1
+    layers: [ui]
 data:
   seeds: [tenant, users]
   cleanup: true

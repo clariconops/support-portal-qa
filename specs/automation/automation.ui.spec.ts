@@ -42,3 +42,33 @@ test("UI automation builder exposes every supported trigger and action", async (
   await page.keyboard.press("Escape");
   await page.getByRole("button", { name: "Cancel", exact: true }).click();
 });
+
+test("UI automation builder creates a valid rule", async ({ page }) => {
+  const name = `qa-ui-automation-rule-${Date.now()}`;
+  await page.goto("http://mydomain.clariconops.test/login");
+  await page.locator("#login-email").fill(email);
+  await page.locator("#login-password").fill(password);
+  await page.getByRole("button", { name: /sign in|log in/i }).click();
+  await expect(page).toHaveURL(/\/dashboard/);
+
+  await page.goto("http://mydomain.clariconops.test/dashboard/settings/automation");
+  await page.locator('[data-qa="automation.create"]').click();
+  await page.locator('[data-qa="automation.rule-name"]').fill(name);
+
+  await page.getByRole("button", { name: "Add group", exact: true }).click();
+  await page.getByLabel("Condition 1 field").click();
+  await page.getByPlaceholder("Search options...").fill("Subject");
+  await page.locator(".sp-select__option-label").filter({ hasText: "Subject" }).click();
+  await page.getByPlaceholder("Type phrase, Enter").fill("qa-ui-automation");
+  await page.getByPlaceholder("Type phrase, Enter").press("Enter");
+
+  await page.locator('[data-qa="automation.action.add"]').click();
+  await page.getByLabel("Action 1 type").click();
+  await page.getByPlaceholder("Search options...").fill("Send reply");
+  await page.locator(".sp-select__option-label").filter({ hasText: "Send reply" }).click();
+  await page.getByPlaceholder("Enter your reply message...").fill("QA automation UI regression reply");
+
+  await expect(page.getByRole("button", { name: "Create rule", exact: true })).toBeEnabled();
+  await page.getByRole("button", { name: "Create rule", exact: true }).click();
+  await expect(page.getByText(name, { exact: true })).toBeVisible();
+});
