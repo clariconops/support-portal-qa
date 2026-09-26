@@ -20,6 +20,12 @@ behaviours:
     testName: bots.create.retrieve.delete
     severity: P0
     layers: [api]
+  - id: bots.workflow.send_collect_end.real_ticket
+    description: A published bot sends a message, collects a response, and completes on a real ticket
+    spec: specs/bots/bots.spec.ts
+    testName: bots.workflow.send_collect_end.real_ticket
+    severity: P0
+    layers: [api]
 data:
   seeds: [tenant, users]
   cleanup: true
