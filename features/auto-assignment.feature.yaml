@@ -1,0 +1,20 @@
+id: auto-assignment
+title: Automatic ticket assignment
+group: workflows
+owner: support-core@company.com
+severity: P0
+tags: [regression, routing, auto-assignment, destructive]
+dependsOn: [auth]
+layers: [api]
+environments: [local, ci, staging]
+behaviours:
+  - id: auto-assignment.round_robin.available_members
+    description: Three available agents receive six tickets in strict round-robin order after the tickets enter their queue
+    spec: specs/queues/roundRobin.assignment.spec.ts
+    testName: auto-assignment.round_robin.available_members
+    severity: P0
+    layers: [api]
+data:
+  seeds: [tenant, agents, queue, tickets]
+  cleanup: true
+timeoutMs: 60000

@@ -11,8 +11,8 @@ const domainId = () => {
   return value;
 };
 
-const suite = defineFeature("queues", (s) => {
-  s.behaviour("queues.assignment.round_robin.available_members", async (ctx) => {
+const suite = defineFeature("auto-assignment", (s) => {
+  s.behaviour("auto-assignment.round_robin.available_members", async (ctx) => {
     await ctx.session.loginAs("admin");
     const admin = ctx.api("TENANT");
     const queueApi = ctx.api("QUEUE");
