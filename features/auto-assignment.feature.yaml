@@ -14,6 +14,18 @@ behaviours:
     testName: auto-assignment.round_robin.available_members
     severity: P0
     layers: [api]
+  - id: auto-assignment.load_balanced.least_loaded_agent
+    description: Available agents receive tickets in least-open-ticket-load order
+    spec: specs/queues/otherAlgorithms.assignment.spec.ts
+    testName: auto-assignment.load_balanced.least_loaded_agent
+    severity: P0
+    layers: [api]
+  - id: auto-assignment.skill_based.best_matching_agent
+    description: A ticket tagged with a configured technical skill is assigned to the best eligible agent
+    spec: specs/queues/otherAlgorithms.assignment.spec.ts
+    testName: auto-assignment.skill_based.best_matching_agent
+    severity: P0
+    layers: [api]
 data:
   seeds: [tenant, agents, queue, tickets]
   cleanup: true
