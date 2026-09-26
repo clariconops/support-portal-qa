@@ -6,8 +6,8 @@ import type { BehaviourResult } from "../reporting/types.js";
 
 interface PlaywrightCase {
   title?: string;
-  outcome?: string;
   results?: Array<{ status?: string; duration?: number; error?: { message?: string } }>;
+  tests?: Array<{ results?: Array<{ status?: string; duration?: number; error?: { message?: string } }> }>;
 }
 
 /** Runs selected Playwright behaviours and maps their native result to the feature report. */
@@ -68,7 +68,11 @@ function effectiveLayers(entry: RunPlanEntry, behaviour: Behaviour) {
 function flattenCases(node: unknown): PlaywrightCase[] {
   if (!node || typeof node !== "object") return [];
   const record = node as Record<string, unknown>;
-  const own = Array.isArray(record.specs) ? (record.specs as PlaywrightCase[]) : [];
+  const own = Array.isArray(record.specs)
+    ? (record.specs as PlaywrightCase[]).flatMap((spec) =>
+        (spec.tests ?? []).map((test) => ({ title: spec.title, results: test.results }))
+      )
+    : [];
   return [
     ...own,
     ...(Array.isArray(record.suites) ? record.suites.flatMap(flattenCases) : []),
