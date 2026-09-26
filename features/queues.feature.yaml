@@ -1,0 +1,26 @@
+id: queues
+title: Queue management
+group: workflows
+owner: support-core@company.com
+severity: P1
+tags: [smoke, regression, api]
+dependsOn: [auth]
+layers: [api]
+environments: [local, ci, staging]
+behaviours:
+  - id: queues.list.loads
+    description: An administrator can retrieve queues for the configured domain
+    spec: specs/queues/queues.spec.ts
+    testName: queues.list.loads
+    severity: P1
+    layers: [api]
+  - id: queues.create.retrieve.delete
+    description: An administrator can create, retrieve, and remove an isolated queue
+    spec: specs/queues/queues.spec.ts
+    testName: queues.create.retrieve.delete
+    severity: P0
+    layers: [api]
+data:
+  seeds: [tenant, users]
+  cleanup: true
+timeoutMs: 60000

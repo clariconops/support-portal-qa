@@ -1,0 +1,47 @@
+id: auth
+title: Authentication & Session
+group: core
+owner: platform-team@company.com
+severity: P0
+tags: [smoke, regression, api, ui]
+dependsOn: []
+layers: [api, ui]
+environments: [local, ci, staging]
+
+behaviours:
+  - id: auth.login.admin
+    description: Admin can log in and receives a token + user
+    spec: specs/auth/auth.spec.ts
+    testName: "logs in as admin with valid credentials"
+    severity: P0
+    layers: [api]
+  - id: auth.login.invalid
+    description: Invalid credentials are rejected with an error
+    spec: specs/auth/auth.spec.ts
+    testName: "rejects invalid credentials"
+    severity: P0
+    layers: [api]
+  - id: auth.me.authenticated
+    description: /me returns the authenticated user profile
+    spec: specs/auth/auth.spec.ts
+    testName: "returns current user profile"
+    severity: P1
+    layers: [api]
+  - id: auth.logout
+    description: Logout invalidates the session
+    spec: specs/auth/auth.spec.ts
+    testName: "logs out and clears the token"
+    severity: P1
+    layers: [api]
+  - id: auth.ui.login.dashboard
+    description: A user can log in through the UI and reach the dashboard
+    spec: specs/auth/auth.ui.spec.ts
+    testName: "UI login reaches the dashboard"
+    severity: P0
+    layers: [ui]
+
+data:
+  seeds: [tenant, users]
+  cleanup: true
+
+timeoutMs: 60000

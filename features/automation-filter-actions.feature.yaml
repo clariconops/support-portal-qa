@@ -1,0 +1,53 @@
+id: automation-filter-actions
+title: Webchat filter combinations × all actions (creation + update triggers)
+group: automation
+owner: qa-team@company.com
+severity: P0
+tags: [automation, webchat, filters, regression, api, integration]
+dependsOn: [auth]
+layers: [api]
+environments: [local, ci, staging]
+
+behaviours:
+  - id: filteractions.dryrun.field_operator_matrix
+    description: Every webchat filter field × operator matches/mismatches as specified (all 12 actions validated per case)
+    spec: specs/automation/filterActions.spec.ts
+    testName: "filteractions.dryrun.field_operator_matrix"
+    severity: P0
+    layers: [api]
+  - id: filteractions.dryrun.condition_combinations
+    description: AND/OR combinations across app, platform, language, tags and subject evaluate correctly
+    spec: specs/automation/filterActions.spec.ts
+    testName: "filteractions.dryrun.condition_combinations"
+    severity: P0
+    layers: [api]
+  - id: filteractions.real.match_webchat_all_actions
+    description: "A webchat ticket matching app+platform+language filters fires a rule carrying all supported actions (remove_tags effect is asserted by the tag_added update test)"
+    spec: specs/automation/filterActions.spec.ts
+    testName: "filteractions.real.match_webchat_all_actions"
+    severity: P0
+    layers: [api]
+  - id: filteractions.real.no_match_webchat_untouched
+    description: A webchat ticket failing one filter dimension (platform is-one-of) is left untouched
+    spec: specs/automation/filterActions.spec.ts
+    testName: "filteractions.real.no_match_webchat_untouched"
+    severity: P0
+    layers: [api]
+  - id: filteractions.update.status_changed_fires
+    description: "Issue-update trigger: a status change on an eligible webchat ticket fires the ticket_status_changed rule (creation does not)"
+    spec: specs/automation/filterActions.spec.ts
+    testName: "filteractions.update.status_changed_fires"
+    severity: P0
+    layers: [api]
+  - id: filteractions.update.tag_added_fires
+    description: "Issue-update trigger: adding a tag to an eligible webchat ticket fires the tag_added rule (creation does not)"
+    spec: specs/automation/filterActions.spec.ts
+    testName: "filteractions.update.tag_added_fires"
+    severity: P1
+    layers: [api]
+
+data:
+  seeds: [tenant, users, tickets]
+  cleanup: true
+
+timeoutMs: 300000

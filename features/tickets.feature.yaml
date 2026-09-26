@@ -1,0 +1,47 @@
+id: tickets
+title: Tickets Management
+group: core
+owner: support-core@company.com
+severity: P1
+tags: [regression, api, ui]
+dependsOn: [auth]
+layers: [api, ui]
+environments: [local, ci, staging]
+
+behaviours:
+  - id: tickets.list.loads
+    description: Ticket list loads and returns a paginated collection
+    spec: specs/tickets/tickets.spec.ts
+    testName: "lists tickets with pagination"
+    severity: P1
+    layers: [api]
+  - id: tickets.create
+    description: A ticket can be created and is retrievable
+    spec: specs/tickets/tickets.spec.ts
+    testName: "creates a ticket"
+    severity: P0
+    layers: [api]
+  - id: tickets.reply.public
+    description: A public reply persists on the ticket
+    spec: specs/tickets/tickets.spec.ts
+    testName: "adds a public reply"
+    severity: P0
+    layers: [api]
+  - id: tickets.status.change
+    description: Status change persists
+    spec: specs/tickets/tickets.spec.ts
+    testName: "changes ticket status"
+    severity: P1
+    layers: [api]
+  - id: tickets.ui.list
+    description: The ticket list renders in the dashboard
+    spec: specs/tickets/tickets.ui.spec.ts
+    testName: "UI ticket list renders"
+    severity: P1
+    layers: [ui]
+
+data:
+  seeds: [tenant, users, queue, tickets]
+  cleanup: true
+
+timeoutMs: 90000

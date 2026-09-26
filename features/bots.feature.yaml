@@ -1,0 +1,26 @@
+id: bots
+title: Bot management
+group: workflows
+owner: support-core@company.com
+severity: P1
+tags: [smoke, regression, api]
+dependsOn: [auth]
+layers: [api]
+environments: [local, ci, staging]
+behaviours:
+  - id: bots.list.loads
+    description: An administrator can retrieve bots for their domain
+    spec: specs/bots/bots.spec.ts
+    testName: bots.list.loads
+    severity: P1
+    layers: [api]
+  - id: bots.create.retrieve.delete
+    description: An administrator can create, retrieve, and remove an isolated bot
+    spec: specs/bots/bots.spec.ts
+    testName: bots.create.retrieve.delete
+    severity: P0
+    layers: [api]
+data:
+  seeds: [tenant, users]
+  cleanup: true
+timeoutMs: 60000

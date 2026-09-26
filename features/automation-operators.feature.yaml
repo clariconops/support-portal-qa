@@ -1,0 +1,886 @@
+id: automation-operators
+title: "Automation operator matrix (generated)"
+group: automation
+owner: qa-team@company.com
+severity: P1
+tags: [automation, regression, api, generated]
+dependsOn: [auth]
+layers: [api]
+environments: [local, ci, staging]
+
+behaviours:
+  - id: automation.matrix.seed
+    description: "(seed) on text (match) → expect probe"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.seed"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.equals.text.match
+    description: "equals on text (match) → expect true"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.equals.text.match"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.equals.text.no_match
+    description: "equals on text (no_match) → expect false"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.equals.text.no_match"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.equals.text.null_value
+    description: "equals on text (null_value) → expect false"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.equals.text.null_value"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.equals.text.boundary
+    description: "equals on text (boundary) → expect false"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.equals.text.boundary"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.equals.text.case_variant
+    description: "equals on text (case_variant) → expect false"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.equals.text.case_variant"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.equals.select.match
+    description: "equals on select (match) → expect true"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.equals.select.match"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.equals.select.no_match
+    description: "equals on select (no_match) → expect false"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.equals.select.no_match"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.equals.select.null_value
+    description: "equals on select (null_value) → expect false"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.equals.select.null_value"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.equals.number.match
+    description: "equals on number (match) → expect true"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.equals.number.match"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.equals.number.no_match
+    description: "equals on number (no_match) → expect false"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.equals.number.no_match"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.equals.number.null_value
+    description: "equals on number (null_value) → expect false"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.equals.number.null_value"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.equals.number.boundary
+    description: "equals on number (boundary) → expect true"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.equals.number.boundary"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.equals.date.match
+    description: "equals on date (match) → expect true"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.equals.date.match"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.equals.date.no_match
+    description: "equals on date (no_match) → expect false"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.equals.date.no_match"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.equals.date.null_value
+    description: "equals on date (null_value) → expect false"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.equals.date.null_value"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.equals.date.boundary
+    description: "equals on date (boundary) → expect true"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.equals.date.boundary"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.equals.boolean.match
+    description: "equals on boolean (match) → expect true"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.equals.boolean.match"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.equals.boolean.no_match
+    description: "equals on boolean (no_match) → expect false"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.equals.boolean.no_match"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.not_equals.text.match
+    description: "not_equals on text (match) → expect false"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.not_equals.text.match"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.not_equals.text.no_match
+    description: "not_equals on text (no_match) → expect true"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.not_equals.text.no_match"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.not_equals.text.null_value
+    description: "not_equals on text (null_value) → expect true"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.not_equals.text.null_value"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.not_equals.text.boundary
+    description: "not_equals on text (boundary) → expect true"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.not_equals.text.boundary"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.not_equals.text.case_variant
+    description: "not_equals on text (case_variant) → expect false"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.not_equals.text.case_variant"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.not_equals.select.match
+    description: "not_equals on select (match) → expect false"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.not_equals.select.match"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.not_equals.select.no_match
+    description: "not_equals on select (no_match) → expect true"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.not_equals.select.no_match"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.not_equals.select.null_value
+    description: "not_equals on select (null_value) → expect true"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.not_equals.select.null_value"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.not_equals.number.match
+    description: "not_equals on number (match) → expect false"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.not_equals.number.match"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.not_equals.number.no_match
+    description: "not_equals on number (no_match) → expect true"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.not_equals.number.no_match"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.not_equals.number.null_value
+    description: "not_equals on number (null_value) → expect false"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.not_equals.number.null_value"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.not_equals.number.boundary
+    description: "not_equals on number (boundary) → expect false"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.not_equals.number.boundary"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.not_equals.date.match
+    description: "not_equals on date (match) → expect false"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.not_equals.date.match"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.not_equals.date.no_match
+    description: "not_equals on date (no_match) → expect true"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.not_equals.date.no_match"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.not_equals.date.null_value
+    description: "not_equals on date (null_value) → expect false"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.not_equals.date.null_value"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.not_equals.date.boundary
+    description: "not_equals on date (boundary) → expect false"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.not_equals.date.boundary"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.not_equals.boolean.match
+    description: "not_equals on boolean (match) → expect false"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.not_equals.boolean.match"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.not_equals.boolean.no_match
+    description: "not_equals on boolean (no_match) → expect true"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.not_equals.boolean.no_match"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.is_set.text.match
+    description: "is_set on text (match) → expect true"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.is_set.text.match"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.is_set.text.null_value
+    description: "is_set on text (null_value) → expect false"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.is_set.text.null_value"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.is_set.select.match
+    description: "is_set on select (match) → expect true"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.is_set.select.match"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.is_set.select.null_value
+    description: "is_set on select (null_value) → expect false"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.is_set.select.null_value"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.is_set.multiselect.match
+    description: "is_set on multiselect (match) → expect true"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.is_set.multiselect.match"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.is_set.multiselect.null_value
+    description: "is_set on multiselect (null_value) → expect false"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.is_set.multiselect.null_value"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.is_set.number.match
+    description: "is_set on number (match) → expect true"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.is_set.number.match"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.is_set.number.null_value
+    description: "is_set on number (null_value) → expect false"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.is_set.number.null_value"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.is_set.date.match
+    description: "is_set on date (match) → expect true"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.is_set.date.match"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.is_set.date.null_value
+    description: "is_set on date (null_value) → expect false"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.is_set.date.null_value"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.is_set.boolean.match
+    description: "is_set on boolean (match) → expect true"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.is_set.boolean.match"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.is_set.boolean.null_value
+    description: "is_set on boolean (null_value) → expect false"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.is_set.boolean.null_value"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.is_not_set.text.match
+    description: "is_not_set on text (match) → expect false"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.is_not_set.text.match"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.is_not_set.text.null_value
+    description: "is_not_set on text (null_value) → expect true"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.is_not_set.text.null_value"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.is_not_set.select.match
+    description: "is_not_set on select (match) → expect false"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.is_not_set.select.match"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.is_not_set.select.null_value
+    description: "is_not_set on select (null_value) → expect true"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.is_not_set.select.null_value"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.is_not_set.multiselect.match
+    description: "is_not_set on multiselect (match) → expect false"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.is_not_set.multiselect.match"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.is_not_set.multiselect.null_value
+    description: "is_not_set on multiselect (null_value) → expect true"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.is_not_set.multiselect.null_value"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.is_not_set.number.match
+    description: "is_not_set on number (match) → expect false"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.is_not_set.number.match"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.is_not_set.number.null_value
+    description: "is_not_set on number (null_value) → expect true"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.is_not_set.number.null_value"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.is_not_set.date.match
+    description: "is_not_set on date (match) → expect false"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.is_not_set.date.match"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.is_not_set.date.null_value
+    description: "is_not_set on date (null_value) → expect true"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.is_not_set.date.null_value"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.is_not_set.boolean.match
+    description: "is_not_set on boolean (match) → expect false"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.is_not_set.boolean.match"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.is_not_set.boolean.null_value
+    description: "is_not_set on boolean (null_value) → expect true"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.is_not_set.boolean.null_value"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.contains.text.match
+    description: "contains on text (match) → expect true"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.contains.text.match"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.contains.text.no_match
+    description: "contains on text (no_match) → expect false"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.contains.text.no_match"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.contains.text.null_value
+    description: "contains on text (null_value) → expect false"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.contains.text.null_value"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.contains.text.boundary
+    description: "contains on text (boundary) → expect true"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.contains.text.boundary"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.contains.text.case_variant
+    description: "contains on text (case_variant) → expect false"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.contains.text.case_variant"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.not_contains.text.match
+    description: "not_contains on text (match) → expect false"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.not_contains.text.match"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.not_contains.text.no_match
+    description: "not_contains on text (no_match) → expect true"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.not_contains.text.no_match"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.not_contains.text.null_value
+    description: "not_contains on text (null_value) → expect true"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.not_contains.text.null_value"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.not_contains.text.boundary
+    description: "not_contains on text (boundary) → expect false"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.not_contains.text.boundary"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.not_contains.text.case_variant
+    description: "not_contains on text (case_variant) → expect false"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.not_contains.text.case_variant"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.starts_with.text.match
+    description: "starts_with on text (match) → expect true"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.starts_with.text.match"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.starts_with.text.no_match
+    description: "starts_with on text (no_match) → expect false"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.starts_with.text.no_match"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.starts_with.text.null_value
+    description: "starts_with on text (null_value) → expect false"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.starts_with.text.null_value"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.starts_with.text.boundary
+    description: "starts_with on text (boundary) → expect true"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.starts_with.text.boundary"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.starts_with.text.case_variant
+    description: "starts_with on text (case_variant) → expect false"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.starts_with.text.case_variant"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.ends_with.text.match
+    description: "ends_with on text (match) → expect true"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.ends_with.text.match"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.ends_with.text.no_match
+    description: "ends_with on text (no_match) → expect false"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.ends_with.text.no_match"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.ends_with.text.null_value
+    description: "ends_with on text (null_value) → expect false"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.ends_with.text.null_value"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.ends_with.text.boundary
+    description: "ends_with on text (boundary) → expect true"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.ends_with.text.boundary"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.ends_with.text.case_variant
+    description: "ends_with on text (case_variant) → expect false"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.ends_with.text.case_variant"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.regex.text.match
+    description: "regex on text (match) → expect true"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.regex.text.match"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.regex.text.no_match
+    description: "regex on text (no_match) → expect false"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.regex.text.no_match"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.regex.text.null_value
+    description: "regex on text (null_value) → expect false"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.regex.text.null_value"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.regex.text.boundary
+    description: "regex on text (boundary) → expect true"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.regex.text.boundary"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.regex.text.case_variant
+    description: "regex on text (case_variant) → expect false"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.regex.text.case_variant"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.has_one_of.multiselect.match
+    description: "has_one_of on multiselect (match) → expect true"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.has_one_of.multiselect.match"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.has_one_of.multiselect.no_match
+    description: "has_one_of on multiselect (no_match) → expect false"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.has_one_of.multiselect.no_match"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.has_one_of.multiselect.null_value
+    description: "has_one_of on multiselect (null_value) → expect false"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.has_one_of.multiselect.null_value"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.has_none_of.multiselect.match
+    description: "has_none_of on multiselect (match) → expect false"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.has_none_of.multiselect.match"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.has_none_of.multiselect.no_match
+    description: "has_none_of on multiselect (no_match) → expect true"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.has_none_of.multiselect.no_match"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.has_none_of.multiselect.null_value
+    description: "has_none_of on multiselect (null_value) → expect true"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.has_none_of.multiselect.null_value"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.has_all_of.multiselect.match
+    description: "has_all_of on multiselect (match) → expect true"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.has_all_of.multiselect.match"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.has_all_of.multiselect.no_match
+    description: "has_all_of on multiselect (no_match) → expect false"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.has_all_of.multiselect.no_match"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.has_all_of.multiselect.null_value
+    description: "has_all_of on multiselect (null_value) → expect false"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.has_all_of.multiselect.null_value"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.greater_than.number.match
+    description: "greater_than on number (match) → expect false"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.greater_than.number.match"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.greater_than.number.no_match
+    description: "greater_than on number (no_match) → expect true"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.greater_than.number.no_match"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.greater_than.number.null_value
+    description: "greater_than on number (null_value) → expect false"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.greater_than.number.null_value"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.greater_than.number.boundary
+    description: "greater_than on number (boundary) → expect false"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.greater_than.number.boundary"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.greater_than.date.match
+    description: "greater_than on date (match) → expect true"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.greater_than.date.match"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.greater_than.date.no_match
+    description: "greater_than on date (no_match) → expect false"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.greater_than.date.no_match"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.greater_than.date.null_value
+    description: "greater_than on date (null_value) → expect false"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.greater_than.date.null_value"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.greater_than.date.boundary
+    description: "greater_than on date (boundary) → expect false"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.greater_than.date.boundary"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.less_than.number.match
+    description: "less_than on number (match) → expect false"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.less_than.number.match"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.less_than.number.no_match
+    description: "less_than on number (no_match) → expect true"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.less_than.number.no_match"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.less_than.number.null_value
+    description: "less_than on number (null_value) → expect false"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.less_than.number.null_value"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.less_than.number.boundary
+    description: "less_than on number (boundary) → expect false"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.less_than.number.boundary"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.less_than.date.match
+    description: "less_than on date (match) → expect false"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.less_than.date.match"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.less_than.date.no_match
+    description: "less_than on date (no_match) → expect false"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.less_than.date.no_match"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.less_than.date.null_value
+    description: "less_than on date (null_value) → expect false"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.less_than.date.null_value"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.less_than.date.boundary
+    description: "less_than on date (boundary) → expect true"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.less_than.date.boundary"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.greater_than_or_equal.number.match
+    description: "greater_than_or_equal on number (match) → expect true"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.greater_than_or_equal.number.match"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.greater_than_or_equal.number.no_match
+    description: "greater_than_or_equal on number (no_match) → expect false"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.greater_than_or_equal.number.no_match"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.greater_than_or_equal.number.null_value
+    description: "greater_than_or_equal on number (null_value) → expect false"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.greater_than_or_equal.number.null_value"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.greater_than_or_equal.number.boundary
+    description: "greater_than_or_equal on number (boundary) → expect true"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.greater_than_or_equal.number.boundary"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.greater_than_or_equal.date.match
+    description: "greater_than_or_equal on date (match) → expect true"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.greater_than_or_equal.date.match"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.greater_than_or_equal.date.no_match
+    description: "greater_than_or_equal on date (no_match) → expect false"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.greater_than_or_equal.date.no_match"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.greater_than_or_equal.date.null_value
+    description: "greater_than_or_equal on date (null_value) → expect false"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.greater_than_or_equal.date.null_value"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.greater_than_or_equal.date.boundary
+    description: "greater_than_or_equal on date (boundary) → expect true"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.greater_than_or_equal.date.boundary"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.less_than_or_equal.number.match
+    description: "less_than_or_equal on number (match) → expect true"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.less_than_or_equal.number.match"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.less_than_or_equal.number.no_match
+    description: "less_than_or_equal on number (no_match) → expect false"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.less_than_or_equal.number.no_match"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.less_than_or_equal.number.null_value
+    description: "less_than_or_equal on number (null_value) → expect false"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.less_than_or_equal.number.null_value"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.less_than_or_equal.number.boundary
+    description: "less_than_or_equal on number (boundary) → expect true"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.less_than_or_equal.number.boundary"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.less_than_or_equal.date.match
+    description: "less_than_or_equal on date (match) → expect true"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.less_than_or_equal.date.match"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.less_than_or_equal.date.no_match
+    description: "less_than_or_equal on date (no_match) → expect false"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.less_than_or_equal.date.no_match"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.less_than_or_equal.date.null_value
+    description: "less_than_or_equal on date (null_value) → expect false"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.less_than_or_equal.date.null_value"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.less_than_or_equal.date.boundary
+    description: "less_than_or_equal on date (boundary) → expect true"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.less_than_or_equal.date.boundary"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.between.number.match
+    description: "between on number (match) → expect probe"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.between.number.match"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.between.number.no_match
+    description: "between on number (no_match) → expect probe"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.between.number.no_match"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.between.number.null_value
+    description: "between on number (null_value) → expect false"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.between.number.null_value"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.between.number.boundary
+    description: "between on number (boundary) → expect probe"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.between.number.boundary"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.between.date.match
+    description: "between on date (match) → expect probe"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.between.date.match"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.between.date.no_match
+    description: "between on date (no_match) → expect probe"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.between.date.no_match"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.between.date.null_value
+    description: "between on date (null_value) → expect false"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.between.date.null_value"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.between.date.boundary
+    description: "between on date (boundary) → expect probe"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.between.date.boundary"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.is_within_last.date.match
+    description: "is_within_last on date (match) → expect true"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.is_within_last.date.match"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.is_within_last.date.no_match
+    description: "is_within_last on date (no_match) → expect false"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.is_within_last.date.no_match"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.is_within_last.date.null_value
+    description: "is_within_last on date (null_value) → expect false"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.is_within_last.date.null_value"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.is_within_last.date.boundary
+    description: "is_within_last on date (boundary) → expect true"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.is_within_last.date.boundary"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.is_today.date.match
+    description: "is_today on date (match) → expect probe"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.is_today.date.match"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.is_yesterday.date.match
+    description: "is_yesterday on date (match) → expect probe"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.is_yesterday.date.match"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.is_this_week.date.match
+    description: "is_this_week on date (match) → expect probe"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.is_this_week.date.match"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.is_this_month.date.match
+    description: "is_this_month on date (match) → expect probe"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.is_this_month.date.match"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.is_true.boolean.match
+    description: "is_true on boolean (match) → expect true"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.is_true.boolean.match"
+    severity: P1
+    layers: [api]
+  - id: automation.matrix.is_false.boolean.match
+    description: "is_false on boolean (match) → expect true"
+    spec: specs/automation/automation.operators.spec.ts
+    testName: "automation.matrix.is_false.boolean.match"
+    severity: P1
+    layers: [api]
+
+data:
+  cleanup: true
+
+timeoutMs: 60000

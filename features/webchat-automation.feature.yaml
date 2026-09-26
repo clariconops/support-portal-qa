@@ -1,0 +1,35 @@
+id: webchat-automation
+title: WebChat → Automation loop (anonymous issue → filters → actions)
+group: automation
+owner: qa-team@company.com
+severity: P0
+tags: [automation, webchat, regression, api, integration]
+dependsOn: [auth]
+layers: [api]
+environments: [local, ci, staging]
+
+behaviours:
+  - id: webchat.ticket.created_anonymous
+    description: An anonymous webchat issue is created with a webchat_* requester and retrievable
+    spec: specs/webchat/webchat.automation.spec.ts
+    testName: "webchat.ticket.created_anonymous"
+    severity: P0
+    layers: [api]
+  - id: webchat.automation.matching_ticket_actions_applied
+    description: Automation filters evaluate a matching webchat ticket and its actions are applied
+    spec: specs/webchat/webchat.automation.spec.ts
+    testName: "webchat.automation.matching_ticket_actions_applied"
+    severity: P0
+    layers: [api]
+  - id: webchat.automation.no_match_untouched
+    description: A non-matching webchat ticket is left untouched by the automation engine
+    spec: specs/webchat/webchat.automation.spec.ts
+    testName: "webchat.automation.no_match_untouched"
+    severity: P1
+    layers: [api]
+
+data:
+  seeds: [tenant, users]
+  cleanup: true
+
+timeoutMs: 90000

@@ -1,0 +1,4 @@
+# Behaviour ids listed here run but never block the verdict.
+# They are reported separately so there is an explicit burndown list of flakes.
+behaviours: []
+#  - tickets.attachment.upload

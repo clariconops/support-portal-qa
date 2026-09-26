@@ -1,0 +1,53 @@
+id: automation
+title: Automation Engine (golden flows & invariants)
+group: automation
+owner: qa-team@company.com
+severity: P0
+tags: [automation, regression, api]
+dependsOn: [auth]
+layers: [api]
+environments: [local, ci, staging]
+
+behaviours:
+  - id: automation.flows.seed
+    description: Harness seeds a probe rule for dry-run cases
+    spec: specs/automation/automation.flows.spec.ts
+    testName: "automation.flows.seed"
+    severity: P1
+    layers: [api]
+  - id: automation.flows.matching_ticket_fires_actions
+    description: Ticket matching a rule's conditions gets the rule's actions applied
+    spec: specs/automation/automation.flows.spec.ts
+    testName: "automation.flows.matching_ticket_fires_actions"
+    severity: P0
+    layers: [api]
+  - id: automation.flows.no_match_leaves_ticket_untouched
+    description: Ticket NOT matching a rule's conditions is left untouched
+    spec: specs/automation/automation.flows.spec.ts
+    testName: "automation.flows.no_match_leaves_ticket_untouched"
+    severity: P0
+    layers: [api]
+  - id: automation.flows.disabled_trigger_no_effect
+    description: A rule with an inactive trigger has no effect
+    spec: specs/automation/automation.flows.spec.ts
+    testName: "automation.flows.disabled_trigger_no_effect"
+    severity: P1
+    layers: [api]
+  - id: automation.flows.invalid_regex_safe_failure
+    description: An invalid regex in conditions fails safely (no 5xx crash)
+    spec: specs/automation/automation.flows.spec.ts
+    testName: "automation.flows.invalid_regex_safe_failure"
+    severity: P1
+    layers: [api]
+  - id: automation.flows.action_execution_order
+    description: Actions are returned in execution_order sequence
+    spec: specs/automation/automation.flows.spec.ts
+    testName: "automation.flows.action_execution_order"
+    severity: P1
+    layers: [api]
+
+data:
+  seeds: [tenant, users, tickets]
+  cleanup: true
+
+timeoutMs: 90000
