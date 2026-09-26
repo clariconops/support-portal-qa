@@ -85,13 +85,13 @@ export const ACTION_TARGETS: Record<ActionType, Record<string, unknown>> = {
   assign_to_agent: { agent_id: "qa-agent-id" },
   assign_to_queue: { queue_id: "qa-queue-id" },
   assign_to_bot: { bot_id: "qa-bot-id" },
-  assign_to_ai_agent: {},
+  assign_to_ai_agent: { ai_agent_id: "qa-ai-agent-id" },
   add_tags: { tags: ["qa-matrix-tag"] },
   remove_tags: { tags: ["qa-matrix-tag"] },
   update_custom_fields: { fields: { qa_matrix_field: "qa" } },
-  send_reply: { body: "qa matrix reply" },
+  send_reply: { message: "qa matrix reply" },
   change_status: { status: "open" },
-  escalate_priority: { to: "urgent" },
+  escalate_priority: { priority: "urgent" },
   add_note: { content: "qa matrix note" },
   send_csat_survey: {},
 };
@@ -197,8 +197,8 @@ export function buildConditionCase(
       if (valueClass === "case_variant") {
         c.conditionValue = "REFUND";
         c.caseSensitive = true;
-        c.ticketValue = "Refund requested for order 123";
-        c.expected = false;
+        c.ticketValue = "refund";
+        c.expected = operator === "not_equals" || operator === "not_contains";
         break;
       }
       switch (operator) {
@@ -274,43 +274,64 @@ export function buildConditionCase(
       break;
     }
     case "number": {
-      c.conditionValue = operator === "between"
-        ? [10, 50]
-        : valueClass === "boundary" ? 30 : valueClass === "no_match" ? 999 : 25;
       c.ticketValue = valueClass === "null_value" ? undefined : 30;
-      if (valueClass === "null_value") c.expected = false;
-      else if (operator === "equals") c.expected = valueClass !== "no_match";
-      else if (operator === "not_equals") c.expected = valueClass === "no_match";
-      else if (operator === "greater_than") c.expected = valueClass === "no_match";
-      else if (operator === "less_than") c.expected = valueClass === "no_match";
-      else if (operator === "greater_than_or_equal" || operator === "less_than_or_equal")
-        c.expected = valueClass === "match" || valueClass === "boundary";
-      else c.expected = "probe";
+      if (valueClass === "null_value") {
+        c.conditionValue = 30;
+        c.expected = operator === "not_equals";
+      } else if (operator === "equals" || operator === "not_equals") {
+        c.conditionValue = valueClass === "no_match" ? 999 : 30;
+        c.expected = operator === "equals" ? valueClass !== "no_match" : valueClass === "no_match";
+      } else if (operator === "greater_than") {
+        c.conditionValue = valueClass === "match" ? 25 : valueClass === "no_match" ? 35 : 30;
+        c.expected = valueClass === "match";
+      } else if (operator === "less_than") {
+        c.conditionValue = valueClass === "match" ? 35 : valueClass === "no_match" ? 25 : 30;
+        c.expected = valueClass === "match";
+      } else if (operator === "greater_than_or_equal") {
+        c.conditionValue = valueClass === "no_match" ? 35 : 30;
+        c.expected = valueClass !== "no_match";
+      } else if (operator === "less_than_or_equal") {
+        c.conditionValue = valueClass === "no_match" ? 25 : 30;
+        c.expected = valueClass !== "no_match";
+      } else {
+        c.conditionValue = [10, 50];
+      }
       break;
     }
     case "date": {
       if (operator === "is_within_last") {
         c.conditionValue = valueClass === "no_match" ? "1 hours" : "7 days";
-        c.ticketValue = valueClass === "null_value" ? undefined : iso(0);
+        c.ticketValue = valueClass === "null_value" ? undefined : iso(valueClass === "no_match" ? 1 / 12 : 0);
         c.expected = valueClass === "no_match" || valueClass === "null_value" ? false : true;
         break;
       }
-      c.conditionValue = operator === "between"
-        ? [iso(10), iso(1)]
-        : valueClass === "boundary" ? iso(5) : iso(30);
-      c.ticketValue = valueClass === "null_value" ? undefined : iso(5);
-      if (valueClass === "null_value") c.expected = false;
-      else if (operator === "equals") c.expected = valueClass === "boundary" || valueClass === "match";
-      else if (operator === "not_equals") c.expected = !(valueClass === "boundary" || valueClass === "match");
-      else if (operator === "greater_than") c.expected = valueClass === "match";
-      else if (operator === "less_than") c.expected = valueClass === "boundary";
-      else if (operator === "greater_than_or_equal" || operator === "less_than_or_equal")
-        c.expected = valueClass === "match" || valueClass === "boundary";
-      else c.expected = "probe";
+      const ticketDate = iso(5);
+      c.ticketValue = valueClass === "null_value" ? undefined : ticketDate;
+      if (valueClass === "null_value") {
+        c.conditionValue = ticketDate;
+        c.expected = operator === "not_equals";
+      } else if (operator === "equals" || operator === "not_equals") {
+        c.conditionValue = valueClass === "no_match" ? iso(30) : ticketDate;
+        c.expected = operator === "equals" ? valueClass !== "no_match" : valueClass === "no_match";
+      } else if (operator === "greater_than") {
+        c.conditionValue = valueClass === "match" ? iso(30) : valueClass === "no_match" ? iso(1) : iso(5);
+        c.expected = valueClass === "match";
+      } else if (operator === "less_than") {
+        c.conditionValue = valueClass === "match" ? iso(1) : valueClass === "no_match" ? iso(30) : iso(5);
+        c.expected = valueClass === "match";
+      } else if (operator === "greater_than_or_equal") {
+        c.conditionValue = valueClass === "no_match" ? iso(1) : iso(5);
+        c.expected = valueClass !== "no_match";
+      } else if (operator === "less_than_or_equal") {
+        c.conditionValue = valueClass === "no_match" ? iso(30) : iso(5);
+        c.expected = valueClass !== "no_match";
+      } else {
+        c.conditionValue = [iso(10), iso(1)];
+      }
       break;
     }
     case "boolean": {
-      c.conditionValue = valueClass === "no_match" ? false : true;
+      c.conditionValue = true;
       c.ticketValue = valueClass === "null_value" ? undefined : valueClass === "no_match" ? false : true;
       c.expected = operator === "equals"
         ? valueClass === "match" || valueClass === "boundary"

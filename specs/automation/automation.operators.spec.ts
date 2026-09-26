@@ -65,7 +65,7 @@ const CASES: unknown[] = [
     "expected": false,
     "conditionValue": "REFUND",
     "caseSensitive": true,
-    "ticketValue": "Refund requested for order 123"
+    "ticketValue": "refund"
   },
   {
     "id": "automation.matrix.equals.select.match",
@@ -103,8 +103,8 @@ const CASES: unknown[] = [
     "operator": "equals",
     "valueClass": "match",
     "expected": true,
-    "conditionValue": 25,
-    "ticketValue": 30
+    "ticketValue": 30,
+    "conditionValue": 30
   },
   {
     "id": "automation.matrix.equals.number.no_match",
@@ -113,8 +113,8 @@ const CASES: unknown[] = [
     "operator": "equals",
     "valueClass": "no_match",
     "expected": false,
-    "conditionValue": 999,
-    "ticketValue": 30
+    "ticketValue": 30,
+    "conditionValue": 999
   },
   {
     "id": "automation.matrix.equals.number.null_value",
@@ -123,7 +123,7 @@ const CASES: unknown[] = [
     "operator": "equals",
     "valueClass": "null_value",
     "expected": false,
-    "conditionValue": 25
+    "conditionValue": 30
   },
   {
     "id": "automation.matrix.equals.number.boundary",
@@ -132,8 +132,8 @@ const CASES: unknown[] = [
     "operator": "equals",
     "valueClass": "boundary",
     "expected": true,
-    "conditionValue": 30,
-    "ticketValue": 30
+    "ticketValue": 30,
+    "conditionValue": 30
   },
   {
     "id": "automation.matrix.equals.date.match",
@@ -142,8 +142,8 @@ const CASES: unknown[] = [
     "operator": "equals",
     "valueClass": "match",
     "expected": true,
-    "conditionValue": "2026-08-23T04:02:35.425Z",
-    "ticketValue": "2026-09-17T04:02:35.425Z"
+    "ticketValue": "2026-09-21T06:33:03.224Z",
+    "conditionValue": "2026-09-21T06:33:03.224Z"
   },
   {
     "id": "automation.matrix.equals.date.no_match",
@@ -152,8 +152,8 @@ const CASES: unknown[] = [
     "operator": "equals",
     "valueClass": "no_match",
     "expected": false,
-    "conditionValue": "2026-08-23T04:02:35.425Z",
-    "ticketValue": "2026-09-17T04:02:35.425Z"
+    "ticketValue": "2026-09-21T06:33:03.225Z",
+    "conditionValue": "2026-08-27T06:33:03.225Z"
   },
   {
     "id": "automation.matrix.equals.date.null_value",
@@ -162,7 +162,7 @@ const CASES: unknown[] = [
     "operator": "equals",
     "valueClass": "null_value",
     "expected": false,
-    "conditionValue": "2026-08-23T04:02:35.425Z"
+    "conditionValue": "2026-09-21T06:33:03.225Z"
   },
   {
     "id": "automation.matrix.equals.date.boundary",
@@ -171,8 +171,8 @@ const CASES: unknown[] = [
     "operator": "equals",
     "valueClass": "boundary",
     "expected": true,
-    "conditionValue": "2026-09-17T04:02:35.426Z",
-    "ticketValue": "2026-09-17T04:02:35.427Z"
+    "ticketValue": "2026-09-21T06:33:03.225Z",
+    "conditionValue": "2026-09-21T06:33:03.225Z"
   },
   {
     "id": "automation.matrix.equals.boolean.match",
@@ -191,7 +191,7 @@ const CASES: unknown[] = [
     "operator": "equals",
     "valueClass": "no_match",
     "expected": false,
-    "conditionValue": false,
+    "conditionValue": true,
     "ticketValue": false
   },
   {
@@ -240,10 +240,10 @@ const CASES: unknown[] = [
     "fieldType": "text",
     "operator": "not_equals",
     "valueClass": "case_variant",
-    "expected": false,
+    "expected": true,
     "conditionValue": "REFUND",
     "caseSensitive": true,
-    "ticketValue": "Refund requested for order 123"
+    "ticketValue": "refund"
   },
   {
     "id": "automation.matrix.not_equals.select.match",
@@ -281,8 +281,8 @@ const CASES: unknown[] = [
     "operator": "not_equals",
     "valueClass": "match",
     "expected": false,
-    "conditionValue": 25,
-    "ticketValue": 30
+    "ticketValue": 30,
+    "conditionValue": 30
   },
   {
     "id": "automation.matrix.not_equals.number.no_match",
@@ -291,8 +291,8 @@ const CASES: unknown[] = [
     "operator": "not_equals",
     "valueClass": "no_match",
     "expected": true,
-    "conditionValue": 999,
-    "ticketValue": 30
+    "ticketValue": 30,
+    "conditionValue": 999
   },
   {
     "id": "automation.matrix.not_equals.number.null_value",
@@ -300,8 +300,8 @@ const CASES: unknown[] = [
     "fieldType": "number",
     "operator": "not_equals",
     "valueClass": "null_value",
-    "expected": false,
-    "conditionValue": 25
+    "expected": true,
+    "conditionValue": 30
   },
   {
     "id": "automation.matrix.not_equals.number.boundary",
@@ -310,8 +310,8 @@ const CASES: unknown[] = [
     "operator": "not_equals",
     "valueClass": "boundary",
     "expected": false,
-    "conditionValue": 30,
-    "ticketValue": 30
+    "ticketValue": 30,
+    "conditionValue": 30
   },
   {
     "id": "automation.matrix.not_equals.date.match",
@@ -320,8 +320,8 @@ const CASES: unknown[] = [
     "operator": "not_equals",
     "valueClass": "match",
     "expected": false,
-    "conditionValue": "2026-08-23T04:02:35.427Z",
-    "ticketValue": "2026-09-17T04:02:35.427Z"
+    "ticketValue": "2026-09-21T06:33:03.225Z",
+    "conditionValue": "2026-09-21T06:33:03.225Z"
   },
   {
     "id": "automation.matrix.not_equals.date.no_match",
@@ -330,8 +330,8 @@ const CASES: unknown[] = [
     "operator": "not_equals",
     "valueClass": "no_match",
     "expected": true,
-    "conditionValue": "2026-08-23T04:02:35.427Z",
-    "ticketValue": "2026-09-17T04:02:35.427Z"
+    "ticketValue": "2026-09-21T06:33:03.225Z",
+    "conditionValue": "2026-08-27T06:33:03.225Z"
   },
   {
     "id": "automation.matrix.not_equals.date.null_value",
@@ -339,8 +339,8 @@ const CASES: unknown[] = [
     "fieldType": "date",
     "operator": "not_equals",
     "valueClass": "null_value",
-    "expected": false,
-    "conditionValue": "2026-08-23T04:02:35.427Z"
+    "expected": true,
+    "conditionValue": "2026-09-21T06:33:03.225Z"
   },
   {
     "id": "automation.matrix.not_equals.date.boundary",
@@ -349,8 +349,8 @@ const CASES: unknown[] = [
     "operator": "not_equals",
     "valueClass": "boundary",
     "expected": false,
-    "conditionValue": "2026-09-17T04:02:35.427Z",
-    "ticketValue": "2026-09-17T04:02:35.427Z"
+    "ticketValue": "2026-09-21T06:33:03.225Z",
+    "conditionValue": "2026-09-21T06:33:03.225Z"
   },
   {
     "id": "automation.matrix.not_equals.boolean.match",
@@ -369,7 +369,7 @@ const CASES: unknown[] = [
     "operator": "not_equals",
     "valueClass": "no_match",
     "expected": true,
-    "conditionValue": false,
+    "conditionValue": true,
     "ticketValue": false
   },
   {
@@ -449,7 +449,7 @@ const CASES: unknown[] = [
     "operator": "is_set",
     "valueClass": "match",
     "expected": true,
-    "ticketValue": "2026-09-22T04:02:35.427Z"
+    "ticketValue": "2026-09-26T06:33:03.225Z"
   },
   {
     "id": "automation.matrix.is_set.date.null_value",
@@ -553,7 +553,7 @@ const CASES: unknown[] = [
     "operator": "is_not_set",
     "valueClass": "match",
     "expected": false,
-    "ticketValue": "2026-09-22T04:02:35.427Z"
+    "ticketValue": "2026-09-26T06:33:03.225Z"
   },
   {
     "id": "automation.matrix.is_not_set.date.null_value",
@@ -629,7 +629,7 @@ const CASES: unknown[] = [
     "expected": false,
     "conditionValue": "REFUND",
     "caseSensitive": true,
-    "ticketValue": "Refund requested for order 123"
+    "ticketValue": "refund"
   },
   {
     "id": "automation.matrix.not_contains.text.match",
@@ -677,10 +677,10 @@ const CASES: unknown[] = [
     "fieldType": "text",
     "operator": "not_contains",
     "valueClass": "case_variant",
-    "expected": false,
+    "expected": true,
     "conditionValue": "REFUND",
     "caseSensitive": true,
-    "ticketValue": "Refund requested for order 123"
+    "ticketValue": "refund"
   },
   {
     "id": "automation.matrix.starts_with.text.match",
@@ -731,7 +731,7 @@ const CASES: unknown[] = [
     "expected": false,
     "conditionValue": "REFUND",
     "caseSensitive": true,
-    "ticketValue": "Refund requested for order 123"
+    "ticketValue": "refund"
   },
   {
     "id": "automation.matrix.ends_with.text.match",
@@ -782,7 +782,7 @@ const CASES: unknown[] = [
     "expected": false,
     "conditionValue": "REFUND",
     "caseSensitive": true,
-    "ticketValue": "Refund requested for order 123"
+    "ticketValue": "refund"
   },
   {
     "id": "automation.matrix.regex.text.match",
@@ -833,7 +833,7 @@ const CASES: unknown[] = [
     "expected": false,
     "conditionValue": "REFUND",
     "caseSensitive": true,
-    "ticketValue": "Refund requested for order 123"
+    "ticketValue": "refund"
   },
   {
     "id": "automation.matrix.has_one_of.multiselect.match",
@@ -964,9 +964,9 @@ const CASES: unknown[] = [
     "fieldType": "number",
     "operator": "greater_than",
     "valueClass": "match",
-    "expected": false,
-    "conditionValue": 25,
-    "ticketValue": 30
+    "expected": true,
+    "ticketValue": 30,
+    "conditionValue": 25
   },
   {
     "id": "automation.matrix.greater_than.number.no_match",
@@ -974,9 +974,9 @@ const CASES: unknown[] = [
     "fieldType": "number",
     "operator": "greater_than",
     "valueClass": "no_match",
-    "expected": true,
-    "conditionValue": 999,
-    "ticketValue": 30
+    "expected": false,
+    "ticketValue": 30,
+    "conditionValue": 35
   },
   {
     "id": "automation.matrix.greater_than.number.null_value",
@@ -985,7 +985,7 @@ const CASES: unknown[] = [
     "operator": "greater_than",
     "valueClass": "null_value",
     "expected": false,
-    "conditionValue": 25
+    "conditionValue": 30
   },
   {
     "id": "automation.matrix.greater_than.number.boundary",
@@ -994,8 +994,8 @@ const CASES: unknown[] = [
     "operator": "greater_than",
     "valueClass": "boundary",
     "expected": false,
-    "conditionValue": 30,
-    "ticketValue": 30
+    "ticketValue": 30,
+    "conditionValue": 30
   },
   {
     "id": "automation.matrix.greater_than.date.match",
@@ -1004,8 +1004,8 @@ const CASES: unknown[] = [
     "operator": "greater_than",
     "valueClass": "match",
     "expected": true,
-    "conditionValue": "2026-08-23T04:02:35.428Z",
-    "ticketValue": "2026-09-17T04:02:35.428Z"
+    "ticketValue": "2026-09-21T06:33:03.225Z",
+    "conditionValue": "2026-08-27T06:33:03.225Z"
   },
   {
     "id": "automation.matrix.greater_than.date.no_match",
@@ -1014,8 +1014,8 @@ const CASES: unknown[] = [
     "operator": "greater_than",
     "valueClass": "no_match",
     "expected": false,
-    "conditionValue": "2026-08-23T04:02:35.428Z",
-    "ticketValue": "2026-09-17T04:02:35.428Z"
+    "ticketValue": "2026-09-21T06:33:03.225Z",
+    "conditionValue": "2026-09-25T06:33:03.225Z"
   },
   {
     "id": "automation.matrix.greater_than.date.null_value",
@@ -1024,7 +1024,7 @@ const CASES: unknown[] = [
     "operator": "greater_than",
     "valueClass": "null_value",
     "expected": false,
-    "conditionValue": "2026-08-23T04:02:35.428Z"
+    "conditionValue": "2026-09-21T06:33:03.225Z"
   },
   {
     "id": "automation.matrix.greater_than.date.boundary",
@@ -1033,8 +1033,8 @@ const CASES: unknown[] = [
     "operator": "greater_than",
     "valueClass": "boundary",
     "expected": false,
-    "conditionValue": "2026-09-17T04:02:35.428Z",
-    "ticketValue": "2026-09-17T04:02:35.428Z"
+    "ticketValue": "2026-09-21T06:33:03.225Z",
+    "conditionValue": "2026-09-21T06:33:03.225Z"
   },
   {
     "id": "automation.matrix.less_than.number.match",
@@ -1042,9 +1042,9 @@ const CASES: unknown[] = [
     "fieldType": "number",
     "operator": "less_than",
     "valueClass": "match",
-    "expected": false,
-    "conditionValue": 25,
-    "ticketValue": 30
+    "expected": true,
+    "ticketValue": 30,
+    "conditionValue": 35
   },
   {
     "id": "automation.matrix.less_than.number.no_match",
@@ -1052,9 +1052,9 @@ const CASES: unknown[] = [
     "fieldType": "number",
     "operator": "less_than",
     "valueClass": "no_match",
-    "expected": true,
-    "conditionValue": 999,
-    "ticketValue": 30
+    "expected": false,
+    "ticketValue": 30,
+    "conditionValue": 25
   },
   {
     "id": "automation.matrix.less_than.number.null_value",
@@ -1063,7 +1063,7 @@ const CASES: unknown[] = [
     "operator": "less_than",
     "valueClass": "null_value",
     "expected": false,
-    "conditionValue": 25
+    "conditionValue": 30
   },
   {
     "id": "automation.matrix.less_than.number.boundary",
@@ -1072,8 +1072,8 @@ const CASES: unknown[] = [
     "operator": "less_than",
     "valueClass": "boundary",
     "expected": false,
-    "conditionValue": 30,
-    "ticketValue": 30
+    "ticketValue": 30,
+    "conditionValue": 30
   },
   {
     "id": "automation.matrix.less_than.date.match",
@@ -1081,9 +1081,9 @@ const CASES: unknown[] = [
     "fieldType": "date",
     "operator": "less_than",
     "valueClass": "match",
-    "expected": false,
-    "conditionValue": "2026-08-23T04:02:35.428Z",
-    "ticketValue": "2026-09-17T04:02:35.428Z"
+    "expected": true,
+    "ticketValue": "2026-09-21T06:33:03.225Z",
+    "conditionValue": "2026-09-25T06:33:03.225Z"
   },
   {
     "id": "automation.matrix.less_than.date.no_match",
@@ -1092,8 +1092,8 @@ const CASES: unknown[] = [
     "operator": "less_than",
     "valueClass": "no_match",
     "expected": false,
-    "conditionValue": "2026-08-23T04:02:35.428Z",
-    "ticketValue": "2026-09-17T04:02:35.428Z"
+    "ticketValue": "2026-09-21T06:33:03.225Z",
+    "conditionValue": "2026-08-27T06:33:03.225Z"
   },
   {
     "id": "automation.matrix.less_than.date.null_value",
@@ -1102,7 +1102,7 @@ const CASES: unknown[] = [
     "operator": "less_than",
     "valueClass": "null_value",
     "expected": false,
-    "conditionValue": "2026-08-23T04:02:35.428Z"
+    "conditionValue": "2026-09-21T06:33:03.225Z"
   },
   {
     "id": "automation.matrix.less_than.date.boundary",
@@ -1110,9 +1110,9 @@ const CASES: unknown[] = [
     "fieldType": "date",
     "operator": "less_than",
     "valueClass": "boundary",
-    "expected": true,
-    "conditionValue": "2026-09-17T04:02:35.428Z",
-    "ticketValue": "2026-09-17T04:02:35.428Z"
+    "expected": false,
+    "ticketValue": "2026-09-21T06:33:03.225Z",
+    "conditionValue": "2026-09-21T06:33:03.225Z"
   },
   {
     "id": "automation.matrix.greater_than_or_equal.number.match",
@@ -1121,8 +1121,8 @@ const CASES: unknown[] = [
     "operator": "greater_than_or_equal",
     "valueClass": "match",
     "expected": true,
-    "conditionValue": 25,
-    "ticketValue": 30
+    "ticketValue": 30,
+    "conditionValue": 30
   },
   {
     "id": "automation.matrix.greater_than_or_equal.number.no_match",
@@ -1131,8 +1131,8 @@ const CASES: unknown[] = [
     "operator": "greater_than_or_equal",
     "valueClass": "no_match",
     "expected": false,
-    "conditionValue": 999,
-    "ticketValue": 30
+    "ticketValue": 30,
+    "conditionValue": 35
   },
   {
     "id": "automation.matrix.greater_than_or_equal.number.null_value",
@@ -1141,7 +1141,7 @@ const CASES: unknown[] = [
     "operator": "greater_than_or_equal",
     "valueClass": "null_value",
     "expected": false,
-    "conditionValue": 25
+    "conditionValue": 30
   },
   {
     "id": "automation.matrix.greater_than_or_equal.number.boundary",
@@ -1150,8 +1150,8 @@ const CASES: unknown[] = [
     "operator": "greater_than_or_equal",
     "valueClass": "boundary",
     "expected": true,
-    "conditionValue": 30,
-    "ticketValue": 30
+    "ticketValue": 30,
+    "conditionValue": 30
   },
   {
     "id": "automation.matrix.greater_than_or_equal.date.match",
@@ -1160,8 +1160,8 @@ const CASES: unknown[] = [
     "operator": "greater_than_or_equal",
     "valueClass": "match",
     "expected": true,
-    "conditionValue": "2026-08-23T04:02:35.428Z",
-    "ticketValue": "2026-09-17T04:02:35.428Z"
+    "ticketValue": "2026-09-21T06:33:03.225Z",
+    "conditionValue": "2026-09-21T06:33:03.225Z"
   },
   {
     "id": "automation.matrix.greater_than_or_equal.date.no_match",
@@ -1170,8 +1170,8 @@ const CASES: unknown[] = [
     "operator": "greater_than_or_equal",
     "valueClass": "no_match",
     "expected": false,
-    "conditionValue": "2026-08-23T04:02:35.428Z",
-    "ticketValue": "2026-09-17T04:02:35.428Z"
+    "ticketValue": "2026-09-21T06:33:03.225Z",
+    "conditionValue": "2026-09-25T06:33:03.225Z"
   },
   {
     "id": "automation.matrix.greater_than_or_equal.date.null_value",
@@ -1180,7 +1180,7 @@ const CASES: unknown[] = [
     "operator": "greater_than_or_equal",
     "valueClass": "null_value",
     "expected": false,
-    "conditionValue": "2026-08-23T04:02:35.428Z"
+    "conditionValue": "2026-09-21T06:33:03.225Z"
   },
   {
     "id": "automation.matrix.greater_than_or_equal.date.boundary",
@@ -1189,8 +1189,8 @@ const CASES: unknown[] = [
     "operator": "greater_than_or_equal",
     "valueClass": "boundary",
     "expected": true,
-    "conditionValue": "2026-09-17T04:02:35.428Z",
-    "ticketValue": "2026-09-17T04:02:35.428Z"
+    "ticketValue": "2026-09-21T06:33:03.225Z",
+    "conditionValue": "2026-09-21T06:33:03.225Z"
   },
   {
     "id": "automation.matrix.less_than_or_equal.number.match",
@@ -1199,8 +1199,8 @@ const CASES: unknown[] = [
     "operator": "less_than_or_equal",
     "valueClass": "match",
     "expected": true,
-    "conditionValue": 25,
-    "ticketValue": 30
+    "ticketValue": 30,
+    "conditionValue": 30
   },
   {
     "id": "automation.matrix.less_than_or_equal.number.no_match",
@@ -1209,8 +1209,8 @@ const CASES: unknown[] = [
     "operator": "less_than_or_equal",
     "valueClass": "no_match",
     "expected": false,
-    "conditionValue": 999,
-    "ticketValue": 30
+    "ticketValue": 30,
+    "conditionValue": 25
   },
   {
     "id": "automation.matrix.less_than_or_equal.number.null_value",
@@ -1219,7 +1219,7 @@ const CASES: unknown[] = [
     "operator": "less_than_or_equal",
     "valueClass": "null_value",
     "expected": false,
-    "conditionValue": 25
+    "conditionValue": 30
   },
   {
     "id": "automation.matrix.less_than_or_equal.number.boundary",
@@ -1228,8 +1228,8 @@ const CASES: unknown[] = [
     "operator": "less_than_or_equal",
     "valueClass": "boundary",
     "expected": true,
-    "conditionValue": 30,
-    "ticketValue": 30
+    "ticketValue": 30,
+    "conditionValue": 30
   },
   {
     "id": "automation.matrix.less_than_or_equal.date.match",
@@ -1238,8 +1238,8 @@ const CASES: unknown[] = [
     "operator": "less_than_or_equal",
     "valueClass": "match",
     "expected": true,
-    "conditionValue": "2026-08-23T04:02:35.428Z",
-    "ticketValue": "2026-09-17T04:02:35.428Z"
+    "ticketValue": "2026-09-21T06:33:03.225Z",
+    "conditionValue": "2026-09-21T06:33:03.225Z"
   },
   {
     "id": "automation.matrix.less_than_or_equal.date.no_match",
@@ -1248,8 +1248,8 @@ const CASES: unknown[] = [
     "operator": "less_than_or_equal",
     "valueClass": "no_match",
     "expected": false,
-    "conditionValue": "2026-08-23T04:02:35.428Z",
-    "ticketValue": "2026-09-17T04:02:35.428Z"
+    "ticketValue": "2026-09-21T06:33:03.225Z",
+    "conditionValue": "2026-08-27T06:33:03.225Z"
   },
   {
     "id": "automation.matrix.less_than_or_equal.date.null_value",
@@ -1258,7 +1258,7 @@ const CASES: unknown[] = [
     "operator": "less_than_or_equal",
     "valueClass": "null_value",
     "expected": false,
-    "conditionValue": "2026-08-23T04:02:35.428Z"
+    "conditionValue": "2026-09-21T06:33:03.225Z"
   },
   {
     "id": "automation.matrix.less_than_or_equal.date.boundary",
@@ -1267,8 +1267,8 @@ const CASES: unknown[] = [
     "operator": "less_than_or_equal",
     "valueClass": "boundary",
     "expected": true,
-    "conditionValue": "2026-09-17T04:02:35.428Z",
-    "ticketValue": "2026-09-17T04:02:35.428Z"
+    "ticketValue": "2026-09-21T06:33:03.225Z",
+    "conditionValue": "2026-09-21T06:33:03.225Z"
   },
   {
     "id": "automation.matrix.between.number.match",
@@ -1277,11 +1277,11 @@ const CASES: unknown[] = [
     "operator": "between",
     "valueClass": "match",
     "expected": "probe",
+    "ticketValue": 30,
     "conditionValue": [
       10,
       50
-    ],
-    "ticketValue": 30
+    ]
   },
   {
     "id": "automation.matrix.between.number.no_match",
@@ -1290,11 +1290,11 @@ const CASES: unknown[] = [
     "operator": "between",
     "valueClass": "no_match",
     "expected": "probe",
+    "ticketValue": 30,
     "conditionValue": [
       10,
       50
-    ],
-    "ticketValue": 30
+    ]
   },
   {
     "id": "automation.matrix.between.number.null_value",
@@ -1303,10 +1303,7 @@ const CASES: unknown[] = [
     "operator": "between",
     "valueClass": "null_value",
     "expected": false,
-    "conditionValue": [
-      10,
-      50
-    ]
+    "conditionValue": 30
   },
   {
     "id": "automation.matrix.between.number.boundary",
@@ -1315,11 +1312,11 @@ const CASES: unknown[] = [
     "operator": "between",
     "valueClass": "boundary",
     "expected": "probe",
+    "ticketValue": 30,
     "conditionValue": [
       10,
       50
-    ],
-    "ticketValue": 30
+    ]
   },
   {
     "id": "automation.matrix.between.date.match",
@@ -1328,11 +1325,11 @@ const CASES: unknown[] = [
     "operator": "between",
     "valueClass": "match",
     "expected": "probe",
+    "ticketValue": "2026-09-21T06:33:03.225Z",
     "conditionValue": [
-      "2026-09-12T04:02:35.428Z",
-      "2026-09-21T04:02:35.428Z"
-    ],
-    "ticketValue": "2026-09-17T04:02:35.428Z"
+      "2026-09-16T06:33:03.225Z",
+      "2026-09-25T06:33:03.225Z"
+    ]
   },
   {
     "id": "automation.matrix.between.date.no_match",
@@ -1341,11 +1338,11 @@ const CASES: unknown[] = [
     "operator": "between",
     "valueClass": "no_match",
     "expected": "probe",
+    "ticketValue": "2026-09-21T06:33:03.225Z",
     "conditionValue": [
-      "2026-09-12T04:02:35.428Z",
-      "2026-09-21T04:02:35.428Z"
-    ],
-    "ticketValue": "2026-09-17T04:02:35.428Z"
+      "2026-09-16T06:33:03.225Z",
+      "2026-09-25T06:33:03.225Z"
+    ]
   },
   {
     "id": "automation.matrix.between.date.null_value",
@@ -1354,10 +1351,7 @@ const CASES: unknown[] = [
     "operator": "between",
     "valueClass": "null_value",
     "expected": false,
-    "conditionValue": [
-      "2026-09-12T04:02:35.428Z",
-      "2026-09-21T04:02:35.428Z"
-    ]
+    "conditionValue": "2026-09-21T06:33:03.225Z"
   },
   {
     "id": "automation.matrix.between.date.boundary",
@@ -1366,11 +1360,11 @@ const CASES: unknown[] = [
     "operator": "between",
     "valueClass": "boundary",
     "expected": "probe",
+    "ticketValue": "2026-09-21T06:33:03.225Z",
     "conditionValue": [
-      "2026-09-12T04:02:35.428Z",
-      "2026-09-21T04:02:35.428Z"
-    ],
-    "ticketValue": "2026-09-17T04:02:35.428Z"
+      "2026-09-16T06:33:03.225Z",
+      "2026-09-25T06:33:03.225Z"
+    ]
   },
   {
     "id": "automation.matrix.is_within_last.date.match",
@@ -1380,7 +1374,7 @@ const CASES: unknown[] = [
     "valueClass": "match",
     "expected": true,
     "conditionValue": "7 days",
-    "ticketValue": "2026-09-22T04:02:35.428Z"
+    "ticketValue": "2026-09-26T06:33:03.225Z"
   },
   {
     "id": "automation.matrix.is_within_last.date.no_match",
@@ -1390,7 +1384,7 @@ const CASES: unknown[] = [
     "valueClass": "no_match",
     "expected": false,
     "conditionValue": "1 hours",
-    "ticketValue": "2026-09-22T04:02:35.428Z"
+    "ticketValue": "2026-09-26T04:33:03.225Z"
   },
   {
     "id": "automation.matrix.is_within_last.date.null_value",
@@ -1409,7 +1403,7 @@ const CASES: unknown[] = [
     "valueClass": "boundary",
     "expected": true,
     "conditionValue": "7 days",
-    "ticketValue": "2026-09-22T04:02:35.428Z"
+    "ticketValue": "2026-09-26T06:33:03.226Z"
   },
   {
     "id": "automation.matrix.is_today.date.match",
@@ -1418,7 +1412,7 @@ const CASES: unknown[] = [
     "operator": "is_today",
     "valueClass": "match",
     "expected": "probe",
-    "ticketValue": "2026-09-22T04:02:35.428Z"
+    "ticketValue": "2026-09-26T06:33:03.226Z"
   },
   {
     "id": "automation.matrix.is_yesterday.date.match",
@@ -1427,7 +1421,7 @@ const CASES: unknown[] = [
     "operator": "is_yesterday",
     "valueClass": "match",
     "expected": "probe",
-    "ticketValue": "2026-09-22T04:02:35.428Z"
+    "ticketValue": "2026-09-26T06:33:03.226Z"
   },
   {
     "id": "automation.matrix.is_this_week.date.match",
@@ -1436,7 +1430,7 @@ const CASES: unknown[] = [
     "operator": "is_this_week",
     "valueClass": "match",
     "expected": "probe",
-    "ticketValue": "2026-09-22T04:02:35.428Z"
+    "ticketValue": "2026-09-26T06:33:03.226Z"
   },
   {
     "id": "automation.matrix.is_this_month.date.match",
@@ -1445,7 +1439,7 @@ const CASES: unknown[] = [
     "operator": "is_this_month",
     "valueClass": "match",
     "expected": "probe",
-    "ticketValue": "2026-09-22T04:02:35.428Z"
+    "ticketValue": "2026-09-26T06:33:03.226Z"
   },
   {
     "id": "automation.matrix.is_true.boolean.match",

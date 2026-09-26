@@ -148,7 +148,7 @@ behaviours:
     severity: P1
     layers: [api]
   - id: automation.matrix.not_equals.text.case_variant
-    description: "not_equals on text (case_variant) → expect false"
+    description: "not_equals on text (case_variant) → expect true"
     spec: specs/automation/automation.operators.spec.ts
     testName: "automation.matrix.not_equals.text.case_variant"
     severity: P1
@@ -184,7 +184,7 @@ behaviours:
     severity: P1
     layers: [api]
   - id: automation.matrix.not_equals.number.null_value
-    description: "not_equals on number (null_value) → expect false"
+    description: "not_equals on number (null_value) → expect true"
     spec: specs/automation/automation.operators.spec.ts
     testName: "automation.matrix.not_equals.number.null_value"
     severity: P1
@@ -208,7 +208,7 @@ behaviours:
     severity: P1
     layers: [api]
   - id: automation.matrix.not_equals.date.null_value
-    description: "not_equals on date (null_value) → expect false"
+    description: "not_equals on date (null_value) → expect true"
     spec: specs/automation/automation.operators.spec.ts
     testName: "automation.matrix.not_equals.date.null_value"
     severity: P1
@@ -430,7 +430,7 @@ behaviours:
     severity: P1
     layers: [api]
   - id: automation.matrix.not_contains.text.case_variant
-    description: "not_contains on text (case_variant) → expect false"
+    description: "not_contains on text (case_variant) → expect true"
     spec: specs/automation/automation.operators.spec.ts
     testName: "automation.matrix.not_contains.text.case_variant"
     severity: P1
@@ -580,13 +580,13 @@ behaviours:
     severity: P1
     layers: [api]
   - id: automation.matrix.greater_than.number.match
-    description: "greater_than on number (match) → expect false"
+    description: "greater_than on number (match) → expect true"
     spec: specs/automation/automation.operators.spec.ts
     testName: "automation.matrix.greater_than.number.match"
     severity: P1
     layers: [api]
   - id: automation.matrix.greater_than.number.no_match
-    description: "greater_than on number (no_match) → expect true"
+    description: "greater_than on number (no_match) → expect false"
     spec: specs/automation/automation.operators.spec.ts
     testName: "automation.matrix.greater_than.number.no_match"
     severity: P1
@@ -628,13 +628,13 @@ behaviours:
     severity: P1
     layers: [api]
   - id: automation.matrix.less_than.number.match
-    description: "less_than on number (match) → expect false"
+    description: "less_than on number (match) → expect true"
     spec: specs/automation/automation.operators.spec.ts
     testName: "automation.matrix.less_than.number.match"
     severity: P1
     layers: [api]
   - id: automation.matrix.less_than.number.no_match
-    description: "less_than on number (no_match) → expect true"
+    description: "less_than on number (no_match) → expect false"
     spec: specs/automation/automation.operators.spec.ts
     testName: "automation.matrix.less_than.number.no_match"
     severity: P1
@@ -652,7 +652,7 @@ behaviours:
     severity: P1
     layers: [api]
   - id: automation.matrix.less_than.date.match
-    description: "less_than on date (match) → expect false"
+    description: "less_than on date (match) → expect true"
     spec: specs/automation/automation.operators.spec.ts
     testName: "automation.matrix.less_than.date.match"
     severity: P1
@@ -670,7 +670,7 @@ behaviours:
     severity: P1
     layers: [api]
   - id: automation.matrix.less_than.date.boundary
-    description: "less_than on date (boundary) → expect true"
+    description: "less_than on date (boundary) → expect false"
     spec: specs/automation/automation.operators.spec.ts
     testName: "automation.matrix.less_than.date.boundary"
     severity: P1

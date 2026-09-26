@@ -58,13 +58,14 @@ const suite = defineFeature("tickets", (s) => {
     ctx.trackResource({ kind: "ticket", service: "TICKET", id: created.id });
 
     const reply = await api.post(`/api/tickets/${created.id}/messages`, {
-      body: "public reply from qa-framework",
-      internal: false,
+      content: "public reply from qa-framework",
+      isPublic: true,
+      isInternal: false,
     });
     assert(reply.status < 400, `reply failed with ${reply.status}`);
 
     const detail = ApiClient.unwrap<{ messages?: unknown[] }>(
-      await api.get(`/api/tickets/${created.id}`)
+      await api.get(`/api/tickets/${created.id}/messages`)
     );
     assert(
       Array.isArray(detail.messages) && detail.messages.length >= 1,
@@ -89,8 +90,8 @@ const suite = defineFeature("tickets", (s) => {
     assert(created?.id, "expected created ticket id");
     ctx.trackResource({ kind: "ticket", service: "TICKET", id: created.id });
 
-    const patch = await api.patch(`/api/tickets/${created.id}`, { status: "open" });
-    assert(patch.status < 400, `status change failed with ${patch.status}`);
+    const update = await api.put(`/api/tickets/${created.id}`, { status: "open" });
+    assert(update.status < 400, `status change failed with ${update.status}`);
 
     await ctx.waitFor(
       async () => {

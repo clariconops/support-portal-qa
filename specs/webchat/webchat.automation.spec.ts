@@ -57,17 +57,22 @@ async function createWebchatTicket(ctx: RunContext, subject: string): Promise<st
 async function createRule(ctx: RunContext, opts: { subjectContains: string }): Promise<string> {
   await ctx.session.loginAs("admin");
   const api = ctx.api("AUTOMATION");
-  const res = await api.post("/api/automation/rules", {
-    name: `qa-webchat-${Date.now()}`,
-    description: "qa-framework webchat automation rule",
-    priority: uniqueRulePriority(),
-    trigger: {
-      trigger_type: "ticket_created",
-      is_active: true,
-      conditions: [{ field: "subject", operator: "contains", value: opts.subjectContains }],
-    },
-    actions: [{ action_type: "add_tags", action_target: { tags: [TAG] }, execution_order: 1 }],
-  });
+  let res;
+  for (let attempt = 0; attempt < 25; attempt += 1) {
+    res = await api.post("/api/automation/rules", {
+      name: `qa-webchat-${Date.now()}-${attempt}`,
+      description: "qa-framework webchat automation rule",
+      priority: uniqueRulePriority(),
+      trigger: {
+        trigger_type: "ticket_created",
+        is_active: true,
+        conditions: [{ field: "subject", operator: "contains", value: opts.subjectContains }],
+      },
+      actions: [{ action_type: "add_tags", action_target: { tags: [TAG] }, execution_order: 1 }],
+    });
+    if (!String(JSON.stringify(res.data)).includes("Priority") || !String(JSON.stringify(res.data)).includes("already used")) break;
+  }
+  assert(res, "rule creation produced no response");
   assert(res.status < 400, `rule creation failed (${res.status}): ${JSON.stringify(res.data).slice(0, 300)}`);
   const created = ApiClient.unwrap<{ id?: string; rule_id?: string }>(res);
   const id = created.id ?? created.rule_id;
