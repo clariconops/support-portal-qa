@@ -14,6 +14,7 @@ dotenv.config({ path: resolve(process.cwd(), ".env") });
 const BASE_URL = process.env.QA_BASE_URL ?? "http://localhost:3000";
 const HEADLESS = (process.env.QA_HEADLESS ?? "true") !== "false";
 const WORKERS = Number(process.env.QA_WORKERS ?? "1");
+const HOST_RESOLVER_RULES = process.env.QA_BROWSER_HOST_RESOLVER_RULES;
 
 export default defineConfig({
   testDir: "./specs",
@@ -32,6 +33,7 @@ export default defineConfig({
   use: {
     baseURL: BASE_URL,
     headless: HEADLESS,
+    launchOptions: HOST_RESOLVER_RULES ? { args: [`--host-resolver-rules=${HOST_RESOLVER_RULES}`] } : undefined,
     trace: "on-first-retry",
     video: "retain-on-failure",
     screenshot: "only-on-failure",

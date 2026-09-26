@@ -24,10 +24,14 @@ export async function runUiBehaviours(
   if (!selected.length) return [];
 
   const names = selected.map(({ behaviour }) => behaviour.testName);
-  const grep = `^(?:${names.map(escapeRegex).join("|")})$`;
-  const specs = [...new Set(selected.map(({ behaviour }) => behaviour.spec))];
-  const args = ["playwright", "test", ...specs, "--grep", grep, "--reporter=json"];
-  const output = await run("npx", args, rootDir);
+  // Playwright matches the full hierarchical title (file/project + test), so
+  // use title fragments instead of anchoring to the bare manifest title.
+  const grep = `(?:${names.map(escapeRegex).join("|")})`;
+  const cli = join(rootDir, "node_modules", "@playwright", "test", "cli.js");
+  // `--grep` selects behaviours by their manifest title. Passing Windows paths
+  // as Playwright positional regexes is not portable, so do not pass spec paths.
+  const args = [cli, "test", "--grep", grep, "--reporter=json"];
+  const output = await run(process.execPath, args, rootDir);
   const artifactDir = join(runDir, "artifacts", "playwright");
   mkdirSync(artifactDir, { recursive: true });
   writeFileSync(join(artifactDir, "raw-results.json"), output.stdout || output.stderr);
@@ -73,7 +77,7 @@ function flattenCases(node: unknown): PlaywrightCase[] {
 
 function run(command: string, args: string[], cwd: string): Promise<{ code: number; stdout: string; stderr: string }> {
   return new Promise((resolve, reject) => {
-    const child = spawn(command, args, { cwd, shell: process.platform === "win32" });
+    const child = spawn(command, args, { cwd, shell: false });
     let stdout = "";
     let stderr = "";
     child.stdout.on("data", (data) => (stdout += data));
